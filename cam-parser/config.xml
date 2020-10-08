@@ -16,7 +16,7 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <platform name="android">
-        <!-- <allow-intent href="market:*" /> -->
+        <allow-intent href="market:*" />
         <splash src="res/screen/android/scanner.jpg"/>
     </platform>
     <!-- <platform name="ios">
