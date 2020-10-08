@@ -29,3 +29,56 @@ function onDeviceReady() {
 }
 
 
+// Gegevens van de client.
+const mqttHost = "farmer.cloudmqtt.com";
+const mqttPort = 34511;
+const user = "itiwppsz";
+const password = "BkRYsnNyy_tk";
+
+
+window.onload = init;
+
+
+const init = () => {
+    const clientId = Math.floor(Math.random() * 10001);
+    client = new Paho.MQTT.Client(mqttHost, Number(mqttPort), String(clientId));
+
+
+    // Event onMessageArrived, koppelen met functie onMessageArrived.
+    client.onMessageArrived = onMessageArrived;
+
+    // Verbinding maken met de broker.
+    client.connect({
+        onSuccess: onConnected,
+        userName: user,
+        password: password,
+        useSSL: true
+    });
+
+    // Klikken op de knop, koppelen met een actie...
+    document.getElementById("btn-send").addEventListener("click", () => {
+        message = new Paho.MQTT.Message(
+            document.getElementById("input-message").value);
+        message.destinationName = "demo";       // Moet gelijk zijn aan 'topic'.
+        client.send(message);
+    })
+}
+
+const onConnected = () => {
+    console.log("onConnected");
+    client.subscribe("demo", { onSuccess: onSubscribed });
+}
+
+const onMessageArrived = (message) => {
+    var currentTime = new Date();
+
+    document.getElementById("div-sub").innerHTML +=
+        message.payloadString + " (" + currentTime.toLocaleTimeString() + ")<br>";
+    console.log("onMessageArrived: " + message.payloadString);
+}
+
+const onSubscribed = (invocationContext) => {
+    console.log("onSubscribed");
+}
+
+
