@@ -3,6 +3,6 @@
 Parse characters by "scanning" with camera.
 
 
-# Idea
 
+# Idea
 Look into => Ocrad.js
