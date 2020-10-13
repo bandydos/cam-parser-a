@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>cam-parser</name>
+<widget id="com.camviewer.cordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>camviewerc</name>
     <description>
-        A cam parser.
+        A sample Apache Cordova application that responds to the deviceready event.
     </description>
     <author email="dev@cordova.apache.org" href="http://cordova.io">
         Apache Cordova Team
@@ -17,15 +17,17 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
-        <splash src="res/screen/android/scanner.jpg"/>
+        <splash src="res/screen/android/splash.jpg"/>
     </platform>
-    <!-- <platform name="ios">
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
-    </platform> -->
+
     <preference name="SplashScreenDelay" value="2000" />
 
-    <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+
+    <!-- <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
     <string>need camera access to take pictures</string>
     </edit-config>
 
@@ -39,5 +41,5 @@
 
     <edit-config target="NSPhotoLibraryAddUsageDescription" file="*-Info.plist" mode="merge">
         <string>need photo library access to save pictures there</string>
-    </edit-config>
+    </edit-config> -->
 </widget>
