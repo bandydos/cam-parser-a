@@ -17,17 +17,20 @@
 <body>
     <div class="jumbotron jumbotron-fluid text-white bg-neat text-center">
         <div class="container">
-            <h1>Cordova mobile app</h1>
+            <h1>Cordova MQTT chat!</h1>
         </div>
     </div>
     <div class="container">
-        <br><br><br>
-        <div class="row mt-5 justify-content-center">
-            <div class="col-4 text-center">
-                <a href="camera.html" class="form-control btn btn-primary text-nowrap">GO TO CAMERA</a>
-                <h3 class="mt-5 mb-5">OR</h3>
-                <a href="chat.html" class="form-control btn btn-primary text-nowrap">GO TO CHAT</a>
+        <div class="row mt-5 justify-content-around">
+            <div class="col-9">
+                <input type="text" id="input-message" class="form-control" placeholder="Message...">
             </div>
+            <div class="col-3">
+                <button id="btn-send" class="btn btn-primary form-control">SEND</button>
+            </div>
+        </div>
+        <div class="row">
+            <div id="div-sub" class="col-6"></div>
         </div>
     </div>
 

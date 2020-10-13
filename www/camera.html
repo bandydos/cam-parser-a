@@ -17,16 +17,21 @@
 <body>
     <div class="jumbotron jumbotron-fluid text-white bg-neat text-center">
         <div class="container">
-            <h1>Cordova mobile app</h1>
+            <h1>Cordova Cam viewer</h1>
         </div>
     </div>
     <div class="container">
-        <br><br><br>
         <div class="row mt-5 justify-content-center">
             <div class="col-4 text-center">
-                <a href="camera.html" class="form-control btn btn-primary text-nowrap">GO TO CAMERA</a>
-                <h3 class="mt-5 mb-5">OR</h3>
-                <a href="chat.html" class="form-control btn btn-primary text-nowrap">GO TO CHAT</a>
+                <a href="camera.html"></a>
+                <button id="btn-takepicture" class="form-control btn btn-primary text-nowrap">TAKE PICTURE</button>
+            </div>
+            
+        </div>
+        <div class="row mt-5 justify-content-center">
+            <div class="col-8 text-center">
+                <p id="img-msg"></p>
+                <img id="img-src">
             </div>
         </div>
     </div>

@@ -5,14 +5,22 @@ function onDeviceReady() {
     document.getElementById('deviceready').classList.add('ready');
 }
 
+// document.getElementById('p-text').innerHTML = "sqf"
+
+// const options = {
+//     quality: 50,
+//     destinationType: Camera.DestinationType.FILE_URI,
+//     sourceType: Camera.PictureSourceType.CAMERA,
+//     mediaType: Camera.MediaType.PICTURE,
+//     encodingType: Camera.EncodingType.JPEG,
+//     cameraDirection: Camera.Direction.BACK,
+//     targetWidht: 300,
+//     targetHeight: 400
+// }
+
 const options = {
     quality: 50,
-    destinationType: Camera.DestinationType.FILE_URI,
-    sourceType: Camera.PictureSourceType.CAMERA,
-    mediaType: Camera.MediaType.PICTURE,
-    encodingType: Camera.EncodingType.JPEG,
-    cameraDirection: Camera.Direction.BACK,
-    targetWidht: 300,
+    targetWidth:400,
     targetHeight: 400
 }
 
@@ -25,7 +33,12 @@ document.getElementById('btn-takepicture').addEventListener('click', () => {
 })
 
 function onSuccess(imgURI) {
-    document.getElementById('img-msg').textContent = imgURI;
+    const d = new Date()
+    const h = d.getHours();
+    const m = d.getMinutes();
+    const s = d.getSeconds();
+
+    document.getElementById('img-msg').textContent = `Your image from ${h}:${m}:${s}!`;
     document.getElementById('img-src').src = imgURI;
 }
 
