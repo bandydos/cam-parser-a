@@ -5,10 +5,14 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Security-Policy"
         content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval';">
+    <!-- <meta http-equiv="Content-Security-Policy"
+        content="default-src * data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
     <meta name="color-scheme" content="light dark">
+    
+    <script src="js/paho/js/paho.js" type="text/javascript"></script>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/bs/css/bootstrap.min.css">
     <title>cordova mobile</title>
@@ -21,22 +25,36 @@
         </div>
     </div>
     <div class="container">
-        <div class="row mt-5 justify-content-around">
+        <div class="row mt-5" id="div-name">
             <div class="col-9">
-                <input type="text" id="input-message" class="form-control" placeholder="Message...">
+                <input id="input-name" type="text" class="form-control" placeholder="Name...">
             </div>
             <div class="col-3">
-                <button id="btn-send" class="btn btn-primary form-control">SEND</button>
+                <button id="btn-name" class="btn btn-success form-control">LOGIN</button>
             </div>
         </div>
-        <div class="row">
-            <div id="div-sub" class="col-6"></div>
+
+
+        <div id="div-loggedin">
+            <div class="row mt-5 justify-content-around">
+                <div class="col-9">
+                    <input type="text" id="input-message" class="form-control" placeholder="Message...">
+                </div>
+                <div class="col-3">
+                    <button id="btn-send" class="btn btn-primary form-control">SEND</button>
+                </div>
+            </div>
+            <div class="row">
+                <div id="div-sub" class="col-6">
+                </div>
+            </div>
         </div>
     </div>
 
     <script src="cordova.js"></script>
-    <script src="js/chat.js"></script>
+    <script src="js/jquery/js/jquery.min.js"></script>
     <script src="js/bs/js/bootstrap.min.js"></script>
+    <script src="js/chat.js"></script>
 </body>
 
 </html>
