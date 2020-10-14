@@ -25,7 +25,7 @@ function onSuccess(imgURI) {
     const m = d.getMinutes();
     const s = d.getSeconds();
 
-    document.getElementById('img-msg').textContent = `Your image from ${h}:${m}:${s}!`;
+    document.getElementById('img-msg').textContent = `Your image from ${h}:${m}:${s}`;
     document.getElementById('img-src').src = imgURI;
 }
 

@@ -5,8 +5,6 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Security-Policy"
         content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval';">
-    <!-- <meta http-equiv="Content-Security-Policy"
-        content="default-src * data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
@@ -24,6 +22,10 @@
             <h1>Cordova MQTT chat!</h1>
         </div>
     </div>
+    <div class="row mt-5 justify-content-center">
+        <div id="div-sub" class="col-4 text-center cont">
+        </div>
+    </div>
     <div class="container">
         <div class="row mt-5" id="div-name">
             <div class="col-9">
@@ -33,10 +35,8 @@
                 <button id="btn-name" class="btn btn-success form-control">LOGIN</button>
             </div>
         </div>
-
-
         <div id="div-loggedin">
-            <div class="row mt-5 justify-content-around">
+            <div class="row justify-content-around mt-5">
                 <div class="col-9">
                     <input type="text" id="input-message" class="form-control" placeholder="Message...">
                 </div>
@@ -44,11 +44,8 @@
                     <button id="btn-send" class="btn btn-primary form-control">SEND</button>
                 </div>
             </div>
-            <div class="row">
-                <div id="div-sub" class="col-6">
-                </div>
-            </div>
         </div>
+        <p id="p-errormsg"></p>
     </div>
 
     <script src="cordova.js"></script>
