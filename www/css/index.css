@@ -1,7 +1,10 @@
+
+
 .bg-neat {
     background: linear-gradient(to bottom right, #01FF70, #7FDBFF);
 }
 
 .cont {
+    height: 300px;
     overflow-y: scroll;
 }
