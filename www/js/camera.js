@@ -5,12 +5,14 @@ function onDeviceReady() {
     document.getElementById('deviceready').classList.add('ready');
 }
 
+// Options for image.
 const options = {
     quality: 50,
     targetWidth:400,
     targetHeight: 400
 }
 
+//  Take piceture (when succes => onSuccess callback).
 function takePicture() {
     navigator.camera.getPicture(onSuccess, onFail, options);
 }
@@ -24,11 +26,13 @@ function onSuccess(imgURI) {
     const h = d.getHours();
     const m = d.getMinutes();
     const s = d.getSeconds();
-
+    
+    // Display image and some text.
     document.getElementById('img-msg').textContent = `Your image from ${h}:${m}:${s}`;
     document.getElementById('img-src').src = imgURI;
 }
 
 function onFail(msg) {
+    // When image is cancelled.
     alert(`Failed: ${msg}`);
 }

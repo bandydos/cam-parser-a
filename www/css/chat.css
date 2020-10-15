@@ -1,0 +1,13 @@
+.cont {
+    height: 50vh;
+    overflow-y: scroll;
+}
+
+@media screen and (orientation: landscape) {
+    #div-header {
+        height: 8vh;
+    }
+    .cont {
+      height: 40vh;
+    }
+}
