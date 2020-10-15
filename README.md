@@ -13,4 +13,10 @@ A look into mobile development with Cordova.
 * [x] Add camera option
 * [x] Use css framework (probably boostrap)
 * [x] Integrate MQTT
-* [ ] Publish
+* [x] Publish
+
+---
+
+## Play store link
+
+* https://play.google.com/store/apps/details?id=com.camviewer.cordova
